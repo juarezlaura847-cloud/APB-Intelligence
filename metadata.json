@@ -1,0 +1,6 @@
+{
+  "name": "APB Control de Equipos",
+  "description": "Sistema de gestión y seguimiento de equipos biomédicos para Asesoría y Pluriservicios Biomédicos (APB). Control de ingresos, estados de revisión y estadísticas por hospital.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

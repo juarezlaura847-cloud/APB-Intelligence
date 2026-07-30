@@ -1,0 +1,291 @@
+import { Equipo, ShowroomEquipo } from './types';
+
+export const SEED_EQUIPOS: Equipo[] = [
+  // --- JUNE 2026 (Previous Month) ---
+  {
+    id: 'eq-001',
+    nombreEquipo: 'Electrocardiógrafo MAC 2000',
+    numeroSerie: 'SN-ECG-99812',
+    fechaLlegada: '2026-06-02',
+    fechaTermino: '2026-06-08',
+    estado: 'entregado',
+    ubicacion: 'planta_baja',
+    falla: 'Interferencia en canal 3 y pérdida de calibración',
+    accesorios: 'Cable de paciente de 10 puntas, cable de alimentación',
+    colaborador: 'Ing. Carlos Mendoza',
+    recibidoPor: 'Diana Ruiz (Recepción)',
+    hospital: 'Hospital Civil de Guadalajara',
+    observaciones: 'Se realizó cambio de cables internos y calibración de amplificador. Equipo funcionando al 100%. Entregado a enfermería.',
+    costoServicio: 4800,
+    cobrado: true
+  },
+  {
+    id: 'eq-002',
+    nombreEquipo: 'Monitor de Signos Vitales Dash 4000',
+    numeroSerie: 'SN-MSV-45301',
+    fechaLlegada: '2026-06-05',
+    fechaTermino: '2026-06-11',
+    estado: 'entregado',
+    ubicacion: 'planta_alta',
+    falla: 'No enciende, posible daño en fuente de poder por sobrecarga',
+    accesorios: 'Sensor SpO2, brazalete NIBP con manguera, cable AC',
+    colaborador: 'Ing. Sofía Ruiz',
+    recibidoPor: 'Diana Ruiz (Recepción)',
+    hospital: 'Hospital Regional de Especialidades',
+    observaciones: 'Se reemplazó fusible principal e integrados de la fuente de alimentación. Se realizaron pruebas de seguridad eléctrica.',
+    costoServicio: 7200,
+    cobrado: true
+  },
+  {
+    id: 'eq-003',
+    nombreEquipo: 'Desfibrilador Lifepak 20',
+    numeroSerie: 'SN-DES-11048',
+    fechaLlegada: '2026-06-10',
+    fechaTermino: '2026-06-18',
+    estado: 'terminado',
+    ubicacion: 'planta_alta',
+    falla: 'Batería no retiene carga, alerta de error en autodiagnóstico',
+    accesorios: 'Paletas externas, cable de terapia de descarga, cable de alimentación',
+    colaborador: 'Ing. Carlos Mendoza',
+    recibidoPor: 'Ing. Carlos Mendoza',
+    hospital: 'Hospital Civil de Guadalajara',
+    observaciones: 'Se instaló batería nueva original de plomo-ácido de 12V. Autodiagnóstico superado exitosamente.',
+    costoServicio: 9500,
+    cobrado: true
+  },
+  {
+    id: 'eq-004',
+    nombreEquipo: 'Autoclave de Vapor Tuttnauer 2540M',
+    numeroSerie: 'SN-AUT-77110',
+    fechaLlegada: '2026-06-14',
+    fechaTermino: '2026-06-23',
+    estado: 'entregado',
+    ubicacion: 'planta_baja',
+    falla: 'Fuga de vapor por la puerta y no alcanza la presión requerida',
+    accesorios: '3 charolas de acero inoxidable, cable de alimentación',
+    colaborador: 'Tec. Alejandro Torres',
+    recibidoPor: 'Diana Ruiz (Recepción)',
+    hospital: 'Clínica Santa María',
+    observaciones: 'Se cambió empaque de puerta de silicón, limpieza de cámara y calibración de válvula de seguridad.',
+    costoServicio: 5400,
+    cobrado: false // June unpaid
+  },
+  {
+    id: 'eq-005',
+    nombreEquipo: 'Bomba de Infusión Alaris GP',
+    numeroSerie: 'SN-BOM-33041',
+    fechaLlegada: '2026-06-20',
+    fechaTermino: '2026-06-25',
+    estado: 'entregado',
+    ubicacion: 'planta_baja',
+    falla: 'Error de oclusión constante al iniciar infusión',
+    accesorios: 'Soporte para poste, cable de alimentación',
+    colaborador: 'Ing. Mariana Gómez',
+    recibidoPor: 'Diana Ruiz (Recepción)',
+    hospital: 'Hospital General de Morelia',
+    observaciones: 'Calibración del sensor de presión de oclusión y limpieza del mecanismo de empuje.',
+    costoServicio: 3100,
+    cobrado: true
+  },
+  {
+    id: 'eq-006',
+    nombreEquipo: 'Unidad Electrocirugía Valleylab Force FX',
+    numeroSerie: 'SN-BIE-80842',
+    fechaLlegada: '2026-06-12',
+    fechaTermino: null,
+    estado: 'espera', // Arrived in June, still "espera" - VERY DELAYED!
+    ubicacion: 'planta_alta',
+    falla: 'Sin potencia en modo monopolar corte',
+    accesorios: 'Pedal doble, cable de placa de retorno, cable de poder',
+    colaborador: 'Ing. Sofía Ruiz',
+    recibidoPor: 'Ing. Sofía Ruiz',
+    hospital: 'Hospital Civil de Guadalajara',
+    observaciones: 'Pendiente de cotización de refacción de tarjeta osciladora de RF de alta potencia por parte del cliente.',
+    costoServicio: 18500,
+    cobrado: false
+  },
+
+  // --- JULY 2026 (Current Month) ---
+  {
+    id: 'eq-007',
+    nombreEquipo: 'Ventilador Mecánico Puritan Bennett 840',
+    numeroSerie: 'SN-VEN-55091',
+    fechaLlegada: '2026-07-02',
+    fechaTermino: '2026-07-10',
+    estado: 'terminado',
+    ubicacion: 'planta_alta',
+    falla: 'Falla en sensor de flujo inspiratorio y alarma de presión',
+    accesorios: 'Brazo articulado, circuito de paciente reutilizable, mangueras de gases O2 y Aire',
+    colaborador: 'Ing. Sofía Ruiz',
+    recibidoPor: 'Diana Ruiz (Recepción)',
+    hospital: 'Hospital Regional de Especialidades',
+    observaciones: 'Se reemplazó el sensor de flujo Q1 original y se realizó calibración de sensores de presión de gases. Pruebas de ciclado correctas.',
+    costoServicio: 24000,
+    cobrado: true // July paid
+  },
+  {
+    id: 'eq-008',
+    nombreEquipo: 'Incubadora Neonatal Giraffe OmniBed',
+    numeroSerie: 'SN-INC-00192',
+    fechaLlegada: '2026-07-01',
+    fechaTermino: null,
+    estado: 'espera', // Arrived July 1st, still "espera" - DELAYED! (arrived > 14 days ago)
+    ubicacion: 'planta_alta',
+    falla: 'Inestabilidad en el control de temperatura de la campana',
+    accesorios: 'Sonda de temperatura de piel, cable de alimentación',
+    colaborador: 'Ing. Mariana Gómez',
+    recibidoPor: 'Diana Ruiz (Recepción)',
+    hospital: 'Hospital Regional de Especialidades',
+    observaciones: 'Requiere cambio de elemento calefactor. Se envió cotización de refacción al hospital y se está en espera de la orden de compra.',
+    costoServicio: 14500,
+    cobrado: false
+  },
+  {
+    id: 'eq-009',
+    nombreEquipo: 'Monitor de Signos Vitales Dash 4000',
+    numeroSerie: 'SN-MSV-45322',
+    fechaLlegada: '2026-07-05',
+    fechaTermino: null,
+    estado: 'revision',
+    ubicacion: 'planta_baja',
+    falla: 'Botones frontales no responden, pantalla parpadea',
+    accesorios: 'Cable de alimentación, brazalete de presión',
+    colaborador: 'Tec. Alejandro Torres',
+    recibidoPor: 'Diana Ruiz (Recepción)',
+    hospital: 'Clínica Santa María',
+    observaciones: 'Se está desarmando el panel frontal para limpiar contactos del teclado de membrana e inspección de soldaduras frías.',
+    costoServicio: 5500,
+    cobrado: false
+  },
+  {
+    id: 'eq-010',
+    nombreEquipo: 'Electrocardiógrafo MAC 2000',
+    numeroSerie: 'SN-ECG-99840',
+    fechaLlegada: '2026-07-08',
+    fechaTermino: null,
+    estado: 'prueba',
+    ubicacion: 'planta_alta',
+    falla: 'Ruido excesivo en derivaciones bipolares de extremidades',
+    accesorios: 'Cable de paciente, electrodos de pinza y ventosa, adaptador AC',
+    colaborador: 'Ing. Carlos Mendoza',
+    recibidoPor: 'Ing. Carlos Mendoza',
+    hospital: 'Hospital Civil de Guadalajara',
+    observaciones: 'Se rehicieron soldaduras en conector DB15. Actualmente en pruebas continuas de adquisición para verificar descarte de ruido.',
+    costoServicio: 3900,
+    cobrado: false
+  },
+  {
+    id: 'eq-011',
+    nombreEquipo: 'Cuna Radiante Amende 2000',
+    numeroSerie: 'SN-CRA-34012',
+    fechaLlegada: '2026-07-12',
+    fechaTermino: null,
+    estado: 'espera', // Arrived July 12th, still "espera" - not extremely delayed yet but waiting
+    ubicacion: 'planta_baja',
+    falla: 'Foco de calefacción fundido y alarma audible inoperante',
+    accesorios: 'Sonda térmica, cable de poder',
+    colaborador: 'Tec. Alejandro Torres',
+    recibidoPor: 'Diana Ruiz (Recepción)',
+    hospital: 'Hospital General de Morelia',
+    observaciones: 'Se solicitó lámpara de cerámica infrarroja de repuesto. El buzzer de alarma está dañado.',
+    costoServicio: 6200,
+    cobrado: false
+  },
+  {
+    id: 'eq-012',
+    nombreEquipo: 'Bomba de Infusión Abbott Plum A+',
+    numeroSerie: 'SN-BOM-91048',
+    fechaLlegada: '2026-07-14',
+    fechaTermino: '2026-07-16',
+    estado: 'terminado',
+    ubicacion: 'planta_baja',
+    falla: 'Mantenimiento preventivo anual y calibración',
+    accesorios: 'Brazadera de soporte, cable AC',
+    colaborador: 'Ing. Mariana Gómez',
+    recibidoPor: 'Diana Ruiz (Recepción)',
+    hospital: 'Sanatorio de la Trinidad',
+    observaciones: 'Se realizó limpieza interna y externa, lubricación de sellos, calibración de caudal y pruebas de alarmas de aire en línea.',
+    costoServicio: 2200,
+    cobrado: true
+  },
+  {
+    id: 'eq-013',
+    nombreEquipo: 'Monitor Fetal Corometrics 170',
+    numeroSerie: 'SN-FET-10022',
+    fechaLlegada: '2026-07-15',
+    fechaTermino: null,
+    estado: 'recepcion',
+    ubicacion: 'planta_baja',
+    falla: 'Transductor de contracciones TOCO no marca presión correcta',
+    accesorios: 'Transductor de ultrasonido US, transductor TOCO, cinturones de sujeción, cable AC',
+    colaborador: 'Ing. Carlos Mendoza',
+    recibidoPor: 'Diana Ruiz (Recepción)',
+    hospital: 'Hospital Civil de Guadalajara',
+    observaciones: 'Equipo recién ingresado. Se asigna para inspección preliminar de transductores.',
+    costoServicio: 4500,
+    cobrado: false
+  }
+];
+
+export const COLABORADORES_OPCIONES = [
+  'Ing. Carlos Mendoza',
+  'Ing. Sofía Ruiz',
+  'Tec. Alejandro Torres',
+  'Ing. Mariana Gómez',
+  'Por asignar'
+];
+
+export const HOSPITALES_OPCIONES = [
+  'Hospital Civil de Guadalajara',
+  'Hospital Regional de Especialidades',
+  'Clínica Santa María',
+  'Hospital General de Morelia',
+  'Sanatorio de la Trinidad',
+  'Hospital Ángeles del Valle',
+  'Otro Hospital'
+];
+
+export const RECIBIDO_POR_OPCIONES = [
+  'Diana Ruiz (Recepción)',
+  'Ing. Carlos Mendoza',
+  'Ing. Sofía Ruiz',
+  'Tec. Alejandro Torres',
+  'Ing. Mariana Gómez'
+];
+
+export const SEED_SHOWROOM_EQUIPOS: ShowroomEquipo[] = [
+  {
+    id: 'sr-001',
+    nombreEquipo: 'Electrocardiógrafo Edan SE-12 Express',
+    marca: 'Edan',
+    modelo: 'SE-12 Express',
+    numeroSerie: 'SN-EDAN-19482',
+    precioDistribuidor: 24000,
+    precioPublico: 31500,
+    accesorios: 'Cable de paciente de 10 puntas banana, Electrodos tipo ventosa precordiales, Electrodos tipo pinzas de extremidades, Cable de alimentación, Manual de operación, Rollo papel térmico.',
+    fichaTecnicaUrl: 'https://www.edan.com/product/ecg/se-12-express.html',
+    vendido: false,
+    vendidoA: '',
+    fechaVenta: '',
+    estado: 'disponible',
+    observaciones: 'Equipo demo en excelente estado estético y funcional. Cuenta con pantalla táctil plegable a color de 12.1 pulgadas.',
+    fotos: []
+  },
+  {
+    id: 'sr-002',
+    nombreEquipo: 'Monitor de Signos Vitales Mindray ePM 10',
+    marca: 'Mindray',
+    modelo: 'ePM 10',
+    numeroSerie: 'SN-MND-482021',
+    precioDistribuidor: 35000,
+    precioPublico: 44800,
+    accesorios: 'Cable ECG de 3 derivaciones reusable, Sensor de SpO2 reusable Mindray, Brazalete de NIBP adulto reusable con manguera de extensión, Sensor de temperatura cutánea.',
+    fichaTecnicaUrl: 'https://www.mindray.com/es/products/patient-monitoring/epm-series',
+    vendido: true,
+    vendidoA: 'Hospital Ángeles del Valle',
+    fechaVenta: '2026-07-15',
+    estado: 'vendido',
+    observaciones: 'Equipo totalmente nuevo de línea. Se vendió con póliza de garantía extendida de 2 años directa con el distribuidor oficial.',
+    fotos: []
+  }
+];
